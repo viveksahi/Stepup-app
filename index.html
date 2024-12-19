@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stepup - A Step Counter That Loves to Roast You</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
+    <main class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 p-8">
+        <!-- Left Section -->
+        <div class="flex-1 space-y-6 text-center md:text-left">
+            <h1 class="text-5xl font-bold text-slate-900">Stepup</h1>
+            <p class="text-2xl text-slate-600 max-w-md">A step counter that loves to roast you</p>
+            <a href="#" class="inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors">
+                Get for iPhone
+            </a>
+        </div>
+        
+        <!-- Right Section -->
+        <div class="flex-1 flex justify-center md:justify-end">
+            <div class="relative w-72 h-[600px] bg-black rounded-[3rem] p-4 border-[14px] border-black">
+                <!-- iPhone Frame -->
+                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-black rounded-b-3xl"></div>
+                <!-- Screen Content -->
+                <div class="w-full h-full bg-white rounded-[2rem] overflow-hidden">
+                    <img src="/api/placeholder/320/640" alt="Stepup App Screenshot" class="w-full h-full object-cover"/>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
