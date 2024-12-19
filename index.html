@@ -5,35 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stepup - A Step Counter That Loves to Roast You</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
-            font-family: 'Inter', sans-serif;
+            background-color: #111111;
+        }
+        .heading-font {
+            font-family: 'Teko', sans-serif;
         }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen flex items-center justify-center p-4">
-    <main class="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 p-8">
-        <!-- Left Section -->
-        <div class="flex-1 space-y-6 text-center md:text-left">
-            <h1 class="text-5xl font-bold text-slate-900">Stepup</h1>
-            <p class="text-2xl text-slate-600 max-w-md">A step counter that loves to roast you</p>
-            <a href="#" class="inline-block bg-blue-600 text-white font-semibold px-8 py-4 rounded-xl hover:bg-blue-700 transition-colors">
-                Get for iPhone
-            </a>
-        </div>
-        
-        <!-- Right Section -->
-        <div class="flex-1 flex justify-center md:justify-end">
-            <div class="relative w-72 h-[600px] bg-black rounded-[3rem] p-4 border-[14px] border-black">
-                <!-- iPhone Frame -->
-                <div class="absolute top-0 left-1/2 -translate-x-1/2 w-40 h-6 bg-black rounded-b-3xl"></div>
-                <!-- Screen Content -->
-                <div class="w-full h-full bg-white rounded-[2rem] overflow-hidden">
-                    <img src="/api/placeholder/320/640" alt="Stepup App Screenshot" class="w-full h-full object-cover"/>
-                </div>
+<body class="min-h-screen">
+    <main class="container mx-auto px-4 py-8 min-h-screen flex flex-col relative">
+        <!-- Top navigation -->
+        <nav class="flex items-center justify-between mb-20">
+            <div class="flex items-center gap-4">
+                <!-- Replace with your dino.svg -->
+                <img src="dino.svg" alt="Pixel Dinosaur" class="w-8 h-8">
+                <span class="text-white text-2xl font-bold heading-font">STEPUP</span>
+            </div>
+            <!-- Moving links to top navigation on mobile -->
+            <div class="flex gap-8">
+                <a href="#" class="text-white hover:text-gray-300 text-sm heading-font">CONTACT US</a>
+                <a href="#" class="text-white hover:text-gray-300 text-sm heading-font">PRIVACY POLICY</a>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+            <!-- Left Content -->
+            <div class="md:w-1/2 space-y-8">
+                <h1 class="text-white text-5xl md:text-6xl font-bold heading-font leading-tight">
+                    A STEP COUNTER THAT LOVES TO ROAST YOU!
+                </h1>
+                
+                <a href="#" class="inline-flex items-center bg-white text-black px-8 py-4 rounded-xl font-medium gap-2 hover:bg-gray-100 transition-colors">
+                    <!-- Replace with your apple.svg -->
+                    <img src="apple.svg" alt="Apple Logo" class="w-6 h-6">
+                    DOWNLOAD ON APP STORE
+                </a>
+            </div>
+            
+            <!-- Right Content - iPhone -->
+            <div class="md:w-1/2 flex justify-center md:justify-end">
+                <!-- Replace device.png with your actual screenshot -->
+                <img src="device.png" alt="App Screenshot" class="w-auto h-[600px] md:h-[650px]">
             </div>
         </div>
+
+        <!-- Footer -->
+        <footer class="mt-20">
+            <div class="flex gap-8">
+                <a href="#" class="text-white hover:text-gray-300 text-sm heading-font">CONTACT US</a>
+                <a href="#" class="text-white hover:text-gray-300 text-sm heading-font">PRIVACY POLICY</a>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
