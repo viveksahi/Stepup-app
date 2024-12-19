@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stepup - A Step Counter That Loves to Roast You</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="favicon.png">
     <link rel="shortcut icon" href="favicon.png">
-    <!-- Other links -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@600&display=swap" rel="stylesheet">
     <style>
@@ -18,6 +17,52 @@
         .heading-font {
             font-family: 'Teko', sans-serif;
         }
+
+        /* Ticker styles */
+        .ticker-wrap {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 12px 0;
+            overflow: hidden;
+        }
+        
+        /* Now we'll have multiple tickers moving together */
+        .ticker-container {
+            display: flex;
+        }
+        
+        .ticker {
+            flex-shrink: 0;
+            display: flex;
+            gap: 30px;
+            animation: tickerMove 40s linear infinite;
+            padding: 0 15px;
+        }
+        
+        .ticker-item {
+            color: white;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .ticker-icon {
+            font-size: 1.2em;
+        }
+        
+        @keyframes tickerMove {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -25,11 +70,9 @@
         <!-- Top navigation -->
         <nav class="flex items-center justify-between mb-20">
             <div class="flex items-center gap-4">
-                <!-- Replace with your dino.svg -->
                 <img src="dino.svg" alt="Pixel Dinosaur" class="w-8 h-8">
                 <span class="text-white text-2xl font-bold heading-font">STEPUP</span>
             </div>
-            <!-- Navigation links with larger font -->
             <div class="flex gap-8">
                 <a href="mailto:vwake.sahi@gmail.com?subject=About%20Stepup" class="text-white hover:text-gray-300 text-base md:text-lg heading-font">CONTACT US</a>
                 <a href="privacy-policy.html" class="text-white hover:text-gray-300 text-base md:text-lg heading-font">PRIVACY POLICY</a>
@@ -45,7 +88,6 @@
                 </h1>
                 
                 <a href="#" class="inline-flex items-center bg-white text-black px-8 py-4 rounded-xl font-medium gap-2 hover:bg-gray-100 transition-colors">
-                    <!-- Replace with your apple.svg -->
                     <img src="apple.svg" alt="Apple Logo" class="w-6 h-6">
                     DOWNLOAD ON APP STORE
                 </a>
@@ -53,10 +95,36 @@
             
             <!-- Right Content - iPhone -->
             <div class="md:w-1/2 w-full flex justify-center">
-                <!-- Increased device size and centered on mobile -->
                 <img src="device.png" alt="App Screenshot" class="w-auto h-[650px] md:h-[750px] mx-auto md:mx-0">
             </div>
         </div>
     </main>
+
+    <!-- Ticker -->
+    <div class="ticker-wrap">
+        <div class="ticker-container">
+            <!-- First ticker -->
+            <div class="ticker">
+                <span class="ticker-item heading-font text-lg">Get up and move <span class="ticker-icon">🏃</span></span>
+                <span class="ticker-item heading-font text-lg">Move your lazy ass now <span class="ticker-icon">💪</span></span>
+                <span class="ticker-item heading-font text-lg">OMG Sloths have less inertia than you <span class="ticker-icon">🦥</span></span>
+                <span class="ticker-item heading-font text-lg">Don't move. Sit here for the rest of your life. <span class="ticker-icon">🪑</span></span>
+            </div>
+            <!-- Duplicate ticker for seamless loop -->
+            <div class="ticker">
+                <span class="ticker-item heading-font text-lg">Get up and move <span class="ticker-icon">🏃</span></span>
+                <span class="ticker-item heading-font text-lg">Move your lazy ass now <span class="ticker-icon">💪</span></span>
+                <span class="ticker-item heading-font text-lg">OMG Sloths have less inertia than you <span class="ticker-icon">🦥</span></span>
+                <span class="ticker-item heading-font text-lg">Don't move. Sit here for the rest of your life. <span class="ticker-icon">🪑</span></span>
+            </div>
+            <!-- Another duplicate for extra smoothness -->
+            <div class="ticker">
+                <span class="ticker-item heading-font text-lg">Get up and move <span class="ticker-icon">🏃</span></span>
+                <span class="ticker-item heading-font text-lg">Move your lazy ass now <span class="ticker-icon">💪</span></span>
+                <span class="ticker-item heading-font text-lg">OMG Sloths have less inertia than you <span class="ticker-icon">🦥</span></span>
+                <span class="ticker-item heading-font text-lg">Don't move. Sit here for the rest of your life. <span class="ticker-icon">🪑</span></span>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
